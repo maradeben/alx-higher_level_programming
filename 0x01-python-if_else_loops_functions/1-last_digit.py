@@ -6,7 +6,7 @@ rem = number % 10
 # this is to get around Pythn's modulo behavior
 if number < 0:
     abs = number * -1
-    rem = abs % 10
+    rem = -(abs % 10)
 
 if rem > 5:
     extra = "greater than 5"
