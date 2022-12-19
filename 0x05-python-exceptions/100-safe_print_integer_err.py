@@ -15,8 +15,8 @@ def safe_print_integer_err(value):
     try:
         print(f"{value:d}")
         return True
-    except ValueError as ve:
+    except (TypeError, ValueError) as tve:
         # sys.stderr.write(f"Exception: {ve}")
         # os.write(2, f"Exception: {ve}")
-        print(f"Exception: {ve}", file=sys.stderr)
+        print(f"Exception: {tve}", file=sys.stderr)
         return False
