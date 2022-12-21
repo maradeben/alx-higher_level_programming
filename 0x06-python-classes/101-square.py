@@ -111,8 +111,7 @@ class Square:
         if self.__size == 0:
             return ('\n')
         else:
-            for i in range(self.__position[1]):
-                literal += '\n'
+            literal += '\n'*self.__position[1]
             for i in range(self.__size):
                 literal += ' ' * self.__position[0]
                 literal += '#' * self.__size

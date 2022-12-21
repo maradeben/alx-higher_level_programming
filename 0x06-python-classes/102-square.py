@@ -77,8 +77,7 @@ class Square:
         Returns:
             True if they are equal
         """
-        if (self.area() == other.area()):
-            return (True)
+        return (self.area() == other.area())
 
     def __ne__(self, other):
         """comparator:
@@ -90,8 +89,7 @@ class Square:
         Returns:
             True if they are not equal
         """
-        if (self.area() != other.area()):
-            return (True)
+        return (self.area() != other.area())
 
     def __gt__(self, other):
         """comparator:
@@ -103,8 +101,7 @@ class Square:
         Returns:
             True if self is greater than other
         """
-        if (self.area() > other.area()):
-            return (True)
+        return (self.area() > other.area())
 
     def __ge__(self, other):
         """comparator:
@@ -116,8 +113,7 @@ class Square:
         Returns:
             True if self is greater than or equal other
         """
-        if (self.area() >= other.area()):
-            return (True)
+        return (self.area() >= other.area())
 
     def __lt__(self, other):
         """comparator:
@@ -129,8 +125,7 @@ class Square:
         Returns:
             True if self is less than other
         """
-        if (self.area() < other.area()):
-            return (True)
+        return (self.area() < other.area())
 
     def __le__(self, other):
         """comparator:
@@ -142,5 +137,4 @@ class Square:
         Returns:
             True if self is less than or equal other
         """
-        if (self.area() <= other.area()):
-            return (True)
+        return (self.area() <= other.area())
