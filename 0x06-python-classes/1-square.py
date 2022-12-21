@@ -10,6 +10,9 @@ class Square:
 
     It has no public attributes
 
+    Attributes:
+        size (int): Size of square
+
     """
 
     def __init__(self, size):
@@ -18,6 +21,6 @@ class Square:
         __init__ is implicitly called on instantiating a Square object
 
         Args:
-            size: a private instance variable representing the length of side
+            size (int): a private instance variable representing the length of side
         """
         self.__size = size
