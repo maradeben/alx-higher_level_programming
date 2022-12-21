@@ -1,5 +1,10 @@
 #!/usr/bin/python3
 
+""" Square class
+Module for representing a Square object
+"""
+
+
 class Square:
     """This is a class to represent a Squre Objects.
 
