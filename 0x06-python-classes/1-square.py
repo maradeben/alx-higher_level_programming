@@ -21,6 +21,6 @@ class Square:
         __init__ is implicitly called on instantiating a Square object
 
         Args:
-            size (int): a private instance variable representing the length of side
+            size (int): Size of square
         """
         self.__size = size
