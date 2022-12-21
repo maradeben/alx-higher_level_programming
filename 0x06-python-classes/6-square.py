@@ -23,28 +23,28 @@ class Square:
 
         Args:
             size (int): Size of square, defaults to 0
-            position (tuple of ints): position of square, cartesian co-ordinates
+            position (tuple of ints): cartesian position of square
 
         Raises:
             TypeError: if size is not of type int
             ValueError: if size less than 0
         """
 
-        if type(size) != int:
-            raise TypeError("size must be an integer")
-        if size < 0:
-            raise ValueError("size must be >= 0")
-        else:
-            self.__size = size
-        # self.__size = size
+        # if type(size) != int:
+        #     raise TypeError("size must be an integer")
+        # if size < 0:
+        #     raise ValueError("size must be >= 0")
+        # else:
+        #     self.__size = size
+        self.size = size
 
-        if (type(position) != tuple or len(position) != 2 or
-                type(position[0]) != int or type(position[1]) != int or
-                position[0] < 0 or position[1] < 0):
-            raise TypeError("position must be a tuple of 2 positive integers")
-        else:
-            self.__position = position
-        # self.__position = position
+        # if (type(position) != tuple or len(position) != 2 or
+        #         type(position[0]) != int or type(position[1]) != int or
+        #         position[0] < 0 or position[1] < 0):
+        #     raise TypeError("position must be a tuple of 2 positive integers")
+        # else:
+        #     self.__position = position
+        self.position = position
 
     def area(self):
         """Method to calculate area of self
@@ -106,7 +106,6 @@ class Square:
             print("")
         else:
             for i in range(self.__size):
-                print('_' * self.__position[0], end='')
-                for j in range(self.__size):
-                    print("#", end='')
+                print(' ' * self.__position[0], end='')
+                print('#' * self.__size, end='')
                 print('')
