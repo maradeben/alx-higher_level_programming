@@ -165,5 +165,4 @@ class Rectangle:
         Attributes:
             size (int): the size of the square
         """
-        cls.width(size)
-        cls.height(size)
+        return cls(size, size)
