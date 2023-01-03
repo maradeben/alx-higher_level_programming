@@ -1,0 +1,9 @@
+Tests for the ``matrix_divided`` function
+========================================
+
+    >>> matrix_divided = __import__("2-matrix_divided").matrix_divided
+
+Example:
+
+    >>> matrix_divided(matrix, 5)
+    [[0.2, 0.4, 0.6], [0.8, 1.0, 1.2]]
