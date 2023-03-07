@@ -9,5 +9,5 @@ def uppercase(str):
         asc = ord(char)  # char's ascii value
         if asc >= 97 and asc <= 122:
             char = chr(asc - 32)  # convert to upper
-        print(char, end='')
+        print("{:s}".format(char), end='')
     print('')
