@@ -2,7 +2,7 @@
 
 for i in range(0, 9):
     for j in range(1, 10):
-        if (i == j or j > i):
+        if (i == j or j < i):
             continue
         print("{:d}{:d}".format(i, j), end='')
         if not (i == 8 and j == 9):
