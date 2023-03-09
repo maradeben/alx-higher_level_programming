@@ -1,14 +1,11 @@
 #!/usr/bin/python3
+import hidden_4
 
 
 def main():
-    sorted_list = []
-    for name in dir("hidden_4.pyc"):
+    for name in dir(hidden_4):
         if not name.startswith("__"):
-            sorted_list.append(name)
-    sorted_list.sort()
-    for name in sorted_list:
-        print("{:s}".format(name))
+            print("{:s}".format(name))
 
 
 if (__name__ == "__main__"):
