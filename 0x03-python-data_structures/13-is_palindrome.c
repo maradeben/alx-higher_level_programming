@@ -7,19 +7,19 @@
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *right = *head, *left = malloc(sizeof(listint_t));
+	listint_t *right = *head, *left;
 	int n1, n2, i;
 
 	n2 = list_len(*head);
 	/* empty list is considered palindrome */
-	if (head == NULL || n2 ==1)
+	if (head == NULL)
 		return (1);
-	
+
 	for (n1 = 0; n1 < n2; n1++, n2--)
 	{
 		/* reset left to head on starting each loop */
 		left = *head;
-		for (i = 0; i < n2; i++)
+		for (i = 0; i < n2 - 1; i++)
 			left = left->next;
 		if (right->n != left->n)
 			return (0);
@@ -36,6 +36,7 @@ int is_palindrome(listint_t **head)
 int list_len(listint_t *h)
 {
 	int count = 0;
+
 	while (h != NULL)
 	{
 		count += 1;
