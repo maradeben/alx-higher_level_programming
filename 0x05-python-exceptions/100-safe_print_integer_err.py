@@ -13,10 +13,8 @@ def safe_print_integer_err(value):
     preceded by 'Exception:'
     """
     try:
-        print(f"{value:d}")
+        print("{:d}".format(value))
         return True
     except (TypeError, ValueError) as tve:
-        # sys.stderr.write(f"Exception: {ve}")
-        # os.write(2, f"Exception: {ve}")
-        print(f"Exception: {tve}", file=sys.stderr)
+        print("Exception: {}".format(tve), file=sys.stderr)
         return False

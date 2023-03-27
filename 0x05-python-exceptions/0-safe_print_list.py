@@ -22,7 +22,5 @@ def safe_print_list(my_list=[], x=0):
                 print()
                 return(i)
         except IndexError:
-            print('')
+            print()
             return (i)
-    print('')
-    return (i + 1)
