@@ -3,11 +3,19 @@
 def safe_print_list(my_list=[], x=0):
     """
     prints x items of a list
-    x may be higher than number of elements in list
+
+    Args:
+        my_list (list): [],
+        x (int): 0
+
+    Returns:
+        the number of arguments printed
     """
+
     if x == 0:
         print()
         return (0)
+
     for i in range(x):
         try:
             print(my_list[i], end='')
