@@ -17,8 +17,8 @@ class Node:
             data (int): the data to insert into the node
             next_node (Node): points to the next node
         """
-        self.data = data
-        self.next_node = next_node
+        self.__data = data
+        self.__next_node = next_node
 
     @property
     def data(self):
@@ -84,36 +84,33 @@ class SinglyLinkedList:
     def sorted_insert(self, value):
         """Insert a new node into the singly linked list
         The list should be in ascending order
-        
         Args:
             value: value of data for new node
         """
+        new = Node(value)
         if self.__head is None:
-            self.__head = Node(value)
+            new.__next_node = None
+            self.__head = new
+        elif self.__head.data > value:
+            new.__next_node = self.__head
+            self.__head = new
         else:
-            new = Node(value)
             current = self.__head
-            print(type(self.__head))
-            while current is not None:
-                if current.__next_node is None:
-                    current.__next_node = new
-                    new.__next_node = None
-                if new < current.__next_node:
-                    new.__next_node = current.__next_node
-                    current.__next_node = new
+            while current.__next_node is not None and\
+                    current.__next_node.data < value:
+                current = current.__next_node
+            new.__next_node = current.__next_node
+            current.__next_node = new
 
     def __str__(self):
         """print the sorted node
-        
+
         Returns:
             the string to print
         """
-
-        literal = ""
+        literal = []
         current = self.__head
         while current is not None:
-            literal += str(self.data)
-            literal += '\n'
+            literal.append(str(current.data))
             current = current.__next_node
-
-        return (literal)
+        return ('\n'.join(literal))
