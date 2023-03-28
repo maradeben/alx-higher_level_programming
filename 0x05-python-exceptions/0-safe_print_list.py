@@ -17,10 +17,10 @@ def safe_print_list(my_list=[], x=0):
         try:
             if i < x:
                 print(my_list[i], end='')
-                i+=1
+                i += 1
             else:
                 print()
-                return(i)
+                return (i)
         except IndexError:
             print()
             return (i)
