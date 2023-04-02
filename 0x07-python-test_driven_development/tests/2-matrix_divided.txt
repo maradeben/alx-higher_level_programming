@@ -1,0 +1,80 @@
+Tests for the ``matrix_divided`` function
+========================================
+
+    >>> matrix_divided = __import__("2-matrix_divided").matrix_divided
+
+Example:
+Test case with matrix of ints:
+    >>> matrix = [
+    ...     [1, 2, 3],
+    ...     [4, 5, 6]
+    ... ]
+    >>> matrix_divided(matrix, 5)
+    [[0.2, 0.4, 0.6], [0.8, 1.0, 1.2]]
+
+Test case with a float value included:
+    >>> matrix = [
+    ...     [1, 2, 3.63],
+    ...     [4, 5, 6]
+    ... ]
+    >>> matrix_divided(matrix, 3)
+    [[0.33, 0.67, 1.21], [1.33, 1.67, 2.0]]
+
+Test case with one list shorter
+    >>> matrix = [
+    ...     [1, 2],
+    ...     [4, 5, 6]
+    ... ]
+    >>> matrix_divided(matrix, 2)
+    Traceback (most recent call last):
+        ...
+    TypeError: Each row of the matrix must have the same size
+    >>>
+
+Test case with a non-int/non-float character
+    >>> matrix = [
+    ...     [1, 2, '3'],
+    ...     [4, 5, 6]
+    ... ]
+    >>> matrix_divided(matrix, 3)
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test case with one non-list item in matrix
+    >>> matrix = [
+    ...     's',
+    ...     [4, 5, 6]
+    ... ]
+    >>> matrix_divided(matrix, 3)
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test case with a 3 * 3 shape
+    >>> matrix = [
+    ...     [1, 2, 3],
+    ...     [4, 5, 6],
+    ...     [7, 8, 9]
+    ... ]
+    >>> matrix_divided(matrix, 3)
+    [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0], [2.33, 2.67, 3.0]]
+
+Test case with a non-square matrix:
+    >>> matrix = [
+    ...     [1, 2, 3, 10],
+    ...     [4, 5, 6, 11],
+    ...     [7, 8, 9, 12]
+    ... ]
+    >>> matrix_divided(matrix, 3)
+    [[0.33, 0.67, 1.0, 3.33], [1.33, 1.67, 2.0, 3.67], [2.33, 2.67, 3.0, 4.0]]
+
+Test case with non-number divisor
+    >>> matrix = [
+    ...     [1, 2, 30],
+    ...     [4, 5, 6]
+    ... ]
+    >>> matrix_divided(matrix, "s")
+    Traceback (most recent call last):
+        ...
+    TypeError: div must be a number

@@ -1,0 +1,65 @@
+Tests for the ``say_my_name`` function
+========================================
+
+    >>> say_my_name = __import__("3-say_my_name").say_my_name
+
+Example:
+    Test case with two correct strings:
+    >>> say_my_name("John", "Smith")
+    My name is John Smith
+
+    Test case with first_name as int
+    >>> say_my_name(4, "Smith")
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+    Test case with last_name as int
+    >>> say_my_name("John", 4)
+    Traceback (most recent call last):
+        ...
+    TypeError: last_name must be a string
+
+    Test case with both as int
+    >>> say_my_name(4, 4)
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+    Test case with only first_name argument
+    >>> say_my_name("Bob")
+    My name is Bob 
+
+    Test case with empty string as first_name
+    >>> say_my_name("")
+    My name is  
+
+    Test case with more than two arguments
+    >>> say_my_name("First", "Middle", "Last")
+    Traceback (most recent call last):
+        ...
+    TypeError: say_my_name() takes from 1 to 2 positional arguments but 3 were given
+
+    Test case with four arguments
+    >>> say_my_name("First", "Middle", "Last", "Extra")
+    Traceback (most recent call last):
+        ...
+    TypeError: say_my_name() takes from 1 to 2 positional arguments but 4 were given
+
+    Test case with undefined value
+    >>> say_my_name(a_name)
+    Traceback (most recent call last):
+        ...
+    NameError: name 'a_name' is not defined
+
+    Test case with undefined value
+    >>> say_my_name("Bob", a_name)
+    Traceback (most recent call last):
+        ...
+    NameError: name 'a_name' is not defined
+
+    Test case with extra variable that's undefined
+    >>> say_my_name("Bob", "Smith", a_name)
+    Traceback (most recent call last):
+        ...
+    NameError: name 'a_name' is not defined
