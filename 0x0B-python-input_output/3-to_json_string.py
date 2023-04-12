@@ -2,6 +2,7 @@
 """ function to print JSON representation of an object (string) """
 import json
 
+
 def to_json_string(my_obj):
     """ return JSON rep of an object (string)
 
