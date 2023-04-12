@@ -1,0 +1,55 @@
+Tests for BaseGeometry class
+===============================
+
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+Example:
+Test case: instance created successfully
+    >>> bg = BaseGeometry()
+    >>> isinstance(bg, BaseGeometry)
+    True
+
+Test case: area raises exception
+    >>> bg.area()
+    Traceback (most recent call last):
+        ...
+    Exception: area() is not implemented
+
+Test case: expected behavior
+    >>> bg.integer_validator("my_int", 12)
+
+Test case: incomplete arguments
+    >>> bg.integer_validator("name")
+    Traceback (most recent call last):
+        ...
+    TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+Test case: too many arguments
+    >>> bg.integer_validator("arg1", 2, "arg3")
+    Traceback (most recent call last):
+        ...
+    TypeError: integer_validator() takes 3 positional arguments but 4 were given
+
+Test case: value is not a string
+    >>> bg.integer_validator("name", "John")
+    Traceback (most recent call last):
+        ...
+    TypeError: name must be an integer
+
+Test case: value is 0
+    >>> bg.integer_validator("age", 0)
+    Traceback (most recent call last):
+        ...
+    ValueError: age must be greater than 0
+
+Test case: value is less than 0
+    >>> bg.integer_validator("distance", -4)
+    Traceback (most recent call last):
+        ...
+    ValueError: distance must be greater than 0
+
+Test case: passing undefined value
+    >>> bg.integer_validator("name", undef)
+    Traceback (most recent call last):
+        ...
+    NameError: name 'undef' is not defined
