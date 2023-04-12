@@ -53,3 +53,33 @@ Test case: passing undefined value
     Traceback (most recent call last):
         ...
     NameError: name 'undef' is not defined
+
+Test case: passing tuple as value
+    >>> bg.integer_validator("age", (4,))
+    Traceback (most recent call last):
+        ...
+    TypeError: age must be an integer
+
+Test case: passing list as value
+    >>> bg.integer_validator("age", [3])
+    Traceback (most recent call last):
+        ...
+    TypeError: age must be an integer
+
+Test case: passing boolean as value
+    >>> bg.integer_validator("age", True)
+    Traceback (most recent call last):
+        ...
+    TypeError: age must be an integer
+
+Test case: passing set as value
+    >>> bg.integer_validator("age", {3,4})
+    Traceback (most recent call last):
+        ...
+    TypeError: age must be an integer
+
+Test case: passing None as value
+    >>> bg.integer_validator("age", None)
+    Traceback (most recent call last):
+        ...
+    TypeError: age must be an integer
