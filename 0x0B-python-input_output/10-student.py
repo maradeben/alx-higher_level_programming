@@ -13,7 +13,7 @@ class Student:
 
     def to_json(self, attrs=None):
         """ retrieves a dictionary representation """
-        if attrs == None:
+        if attrs is None:
             return (self.__dict__)
         else:
             return ({k: self.__dict__[k] for k in self.__dict__ & attrs})
