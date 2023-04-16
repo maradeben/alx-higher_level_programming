@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Module implementing a Rectangle object """
 from models.base import Base
+import json
 
 
 class Rectangle(Base):
@@ -143,3 +144,12 @@ class Rectangle(Base):
                 elif key == "y":
                     self.y = value
 
+    def to_dictionary(self):
+        """ convert to json dict """
+        return ({
+            "id": self.id,
+            "width": self.__width,
+            "height": self.__height,
+            "x": self.x,
+            "y": self.y
+        })
