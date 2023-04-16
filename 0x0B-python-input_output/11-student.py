@@ -24,3 +24,4 @@ class Student:
         for k, v in json.items():
             self.__dict__[k] = v
 
+
