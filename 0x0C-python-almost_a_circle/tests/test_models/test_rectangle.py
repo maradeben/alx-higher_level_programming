@@ -27,14 +27,14 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(TypeError) as e:
             r = Rectangle()
         err = "__init__() missing 2 required positional arguments: \
-            'width' and 'height'"
+'width' and 'height'"
         self.assertEqual(str(e.exception), err)
 
         # test case with excessive arguments
         with self.assertRaises(TypeError) as e:
             r = Rectangle(3, 4, 5, 6, 7, 8)
         err = "__init__() takes from 3 to 6 positional arguments \
-            but 7 were given"
+but 7 were given"
         self.assertEqual(str(e.exception), err)
 
     def test_setter_getter(self):

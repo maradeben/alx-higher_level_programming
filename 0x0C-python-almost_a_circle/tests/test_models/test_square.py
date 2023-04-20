@@ -14,15 +14,16 @@ class TestRectangle(unittest.TestCase):
     def test_init(self):
         Base._Base__nb_objects = 0
         s1 = Square(5)  # no args for x, y, and id
-        r2 = Square(5, 3, 3)  # no args for id
-        r4 = Square(5, 3, 3, 2)
-        self.assertIsInstance(r1, Square)
+        s2 = Square(5, 3, 3)  # no args for id
+        s3  = Square(5, 3, 3, 5)
+        s4 = Square(5, 3, 3)
+        self.assertIsInstance(s1, Square)
         self.assertTrue(issubclass(Square, Rectangle))
-        self.assertTrue(issubclass(Squre, Base))
-        self.assertEqual(r1.id, 1)
-        self.assertEqual(r2.id, 2)
-        self.assertEqual(r3.id, 5)
-        self.assertEqual(r4.id, 3)
+        self.assertTrue(issubclass(Square, Base))
+        self.assertEqual(s1.id, 1)
+        self.assertEqual(s2.id, 2)
+        self.assertEqual(s3.id, 5)
+        self.assertEqual(s4.id, 3)
 """
         # test case with no arguments
         with self.assertRaises(TypeError) as e:
@@ -94,7 +95,7 @@ class TestRectangle(unittest.TestCase):
 
     @staticmethod
     def capture_stdout(rect, method):
-        """ capture and return text printed to stdout """
+        # capture and return text printed to stdout
 
         printout = io.StringIO()
         sys.stdout = printout
@@ -118,7 +119,7 @@ class TestRectangle(unittest.TestCase):
 
         r = Rectangle(4, 6, 2, 2)
         printout = self.capture_stdout(r, "disp")
-        disp = """
+        disp =
 
 
           ####
@@ -127,7 +128,6 @@ class TestRectangle(unittest.TestCase):
           ####
           ####
           ####
-        """
 
     def test__str__(self):
         Base._Base__nb_objects = 0
