@@ -2,7 +2,7 @@
 
 const argv = process.argv.slice(2);
 
-if (argv.length <= 3) {
+if (!(argv.length > 1)) {
   console.log(0);
 } else {
   // convert to numbers
