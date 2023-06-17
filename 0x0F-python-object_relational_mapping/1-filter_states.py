@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" script to list all states from database hbtn_0e_0_usa """
+""" script to list all states starting with N from database hbtn_0e_0_usa"""
 
 import MySQLdb
 from sys import argv
@@ -11,7 +11,8 @@ if __name__ == "__main__":
     cursor = con.cursor()
     cursor.execute("SELECT * FROM states ORDER BY id ASC")
 
-    for i in cursor.fetchall():
-        print(i)
+    for state in cursor.fetchall():
+        if state[1][0] == "N":
+            print(state)
     cursor.close()
     con.close()
