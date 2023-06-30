@@ -11,7 +11,7 @@ if __name__ == "__main__":
     url = 'https://api.github.com/users/{}'.format(username)
 
     r = requests.get(url, auth=HTTPBasicAuth(username, password))
-    try:
+    if r.status_code == 200:
         print(r.json()['id'])
-    except ValueError:
-        print("Not a valid JSON")
+    else:
+        print("None")
