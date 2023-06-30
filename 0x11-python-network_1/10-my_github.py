@@ -12,6 +12,6 @@ if __name__ == "__main__":
 
     r = requests.get(url, auth=HTTPBasicAuth(username, password))
     if r.status_code == 200:
-        print(r.json()['id'])
+        print(r.json().get('id'))
     else:
         print("None")
