@@ -13,10 +13,10 @@ request(options, (error, response, body) => {
     console.log(error);
   } else {
     const todos = JSON.parse(body);
-    const dash = {};
+    let dash = {};
     for (let i = 0; i < todos.length; i++) {
-      const key = todos[i].userId.toString();
-      if (todos[i].completed) {
+      let key = todos[i]['userId'].toString();
+      if (todos[i]['completed']) {
         if (dash[key]) {
           dash[key]++;
         } else {
